@@ -1,13 +1,13 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
         // *** Binary search ***
         /* implementation of binary search
            input : array + key
            have to compare key with mid
            class Second just for fun and use generics, wildcards
          */
+
         BinarySearch<Integer> binaryExample = new BinarySearch<Integer>(52);
         System.out.println("Your binaryNumber is " + binaryExample.getNumber());
         int ex = BinarySearch.binarySearch(new int[] {3, 6, 9, 10, 15, 19, 25, 35, 56, 79, 95}, 79);
@@ -25,6 +25,7 @@ public class Main {
            to the beginning we use method add(value) to create a new node
            whose next -> gonna be previous head(value, next -> null)
          */
+
         LinkedList list = new LinkedList();
         list.add(1);
         list.add(35);
