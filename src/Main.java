@@ -46,5 +46,35 @@ public class Main {
 
         list.print();
 
+
+        // *** Stack ***
+        /* Stack implementation with Dijkstra`s 2 stack algorithm
+            main idea of this algorithm is to collect values into value stack
+            and operators into operator stack
+            Operator "(" : ignore
+            Operator ")" : pop operator and 2 values, push the result of applying that
+            operator to those values onto the operator stack
+         */
+
+        StackRealize<String> ops = new StackRealize<String>();
+        StackRealize<Double> vals = new StackRealize<Double>();
+
+        String example = "( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )";
+        String[] splitFromExample = example.split(" ");
+
+        for (int i = 0; i < splitFromExample.length; i++) {
+            if (splitFromExample[i].equals("("))
+                ;
+            else if (splitFromExample[i].equals("+")) ops.push(splitFromExample[i]);
+            else if (splitFromExample[i].equals("*")) ops.push(splitFromExample[i]);
+            else if (splitFromExample[i].equals(")")) {
+                String op = ops.pop();
+                if (op.equals("+")) vals.push(vals.pop() + vals.pop())
+                        ;
+                else if (op.equals("*")) vals.push(vals.pop() * vals.pop());
+            } else vals.push(Double.parseDouble(splitFromExample[i]))
+                    ;
+        }
+        System.out.println(vals.pop());
     }
 }
