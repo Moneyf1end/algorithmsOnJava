@@ -1,3 +1,11 @@
+/* stack works on LIFO(Last in First out)
+   we create our class with generic type <T> because of avoiding casting
+   there are methods such as isFull(), isEmpty(), peek(),
+   push with resizing array when its full and
+   pop with sharking array when its 1/4 full
+   Our method resize create a copy array
+   just to allocate memory for a new size of array
+ */
 public class StackRealize<T> {
     private T[] array;
     private int N = 0;
